@@ -43,11 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Model\Cart.cs" />
+    <Compile Include="Model\EndField.cs" />
+    <Compile Include="Model\Field.cs" />
+    <Compile Include="Controller\Game.cs" />
+    <Compile Include="View\InputView.cs" />
+    <Compile Include="Model\ManeuveringField.cs" />
+    <Compile Include="Model\MoveAble.cs" />
+    <Compile Include="View\OutputView.cs" />
+    <Compile Include="Controller\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Quay.cs" />
+    <Compile Include="Model\Ship.cs" />
+    <Compile Include="Model\Switch.cs" />
+    <Compile Include="Model\Warehouse.cs" />
+    <Compile Include="Model\WaterField.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="GoudkoortsDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Goudkoorts
+{
+    public class Quay : Field
+    {
+        public Ship Ship { get; set; }
+
+        public override string Print()
+        {
+            if(MoveAble != null)
+            {
+                return MoveAble.Print();
+            }
+            return "█";
+        }
+
+        public override void Move()
+        {
+            Ship.AmountOfGold++;
+            MoveAble.IsFull = false;
+            //verder het gewone bewegen doen
+        }
+    }
+}
