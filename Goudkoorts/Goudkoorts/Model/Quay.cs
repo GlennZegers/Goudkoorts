@@ -23,6 +23,14 @@ namespace Goudkoorts
             MoveAble = moveAble;
             Ship.AmountOfGold++;
             MoveAble.IsFull = false;
+
+            if (Ship != null)
+            {
+                if (Ship.IsFull)
+                {
+                    NextField.Move(moveAble);
+                }
+            }
         }
     }
 }

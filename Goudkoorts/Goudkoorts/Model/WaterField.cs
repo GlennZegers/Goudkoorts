@@ -15,5 +15,15 @@ namespace Goudkoorts
             }
             return "~";
         }
+
+        public override void Move(MoveAble moveAble)
+        {
+            //if (lowerfield != null) 
+            //{
+            //    lowerfield(quay).Move(moveAble);
+            //if lowerfield.ship == null >> ship = Moveable
+            //}
+            MoveAble = moveAble;
+        }
     }
 }
