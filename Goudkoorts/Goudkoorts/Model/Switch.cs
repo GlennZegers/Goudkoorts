@@ -27,5 +27,14 @@ namespace Goudkoorts
                 DirectionIsUp = true;
             }
         }
+
+        public override string Print()
+        {
+            if (DirectionIsUp)
+            {
+                return "^";
+            }
+            return "˅";
+        }
     }
 }

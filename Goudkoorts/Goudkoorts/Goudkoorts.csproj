@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Model\Cart.cs" />
     <Compile Include="Model\EndField.cs" />
+    <Compile Include="Model\EndWaterField.cs" />
     <Compile Include="Model\Field.cs" />
     <Compile Include="Controller\Game.cs" />
     <Compile Include="View\InputView.cs" />

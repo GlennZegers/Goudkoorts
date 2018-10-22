@@ -10,7 +10,7 @@ namespace Goudkoorts
     {
         static void Main(string[] args)
         {
-            //hoi anna
+            Game game = new Game();
         }
     }
 }

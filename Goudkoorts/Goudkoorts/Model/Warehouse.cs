@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Warehouse
+    public class Warehouse : Field
     {
         public Field StartField { get; set; }
 
@@ -14,7 +14,7 @@ namespace Goudkoorts
             StartField.MoveAble = new Cart();
         }
 
-        public String Print()
+        public override String Print()
         {
             return "⏏";
         }
