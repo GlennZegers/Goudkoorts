@@ -11,7 +11,7 @@ namespace Goudkoorts
         public Field LowerField { get; set; }
         public bool DirectionIsUp { get; set; }
 
-        public override void Move()
+        public override void Move(MoveAble moveAble)
         {
             //deze moet hem of aan de upperfield geven of aan de lowerfield
         }
@@ -32,9 +32,9 @@ namespace Goudkoorts
         {
             if (DirectionIsUp)
             {
-                return "^";
+                return "/";
             }
-            return "˅";
+            return "\\";
         }
     }
 }

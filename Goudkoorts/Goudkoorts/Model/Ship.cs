@@ -23,5 +23,10 @@ namespace Goudkoorts
             }
             return "O";
         }
+
+        public override void Move()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace Goudkoorts
             {
                 return MoveAble.Print();
             }
-            return "-";
+            return ".";
         }
     }
 }

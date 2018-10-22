@@ -7,6 +7,15 @@ namespace Goudkoorts
 {
     public class OutputView
     {
+        public Field[,] FieldArray { get; set; }
+
+        public OutputView(Field[,] f)
+        {
+            FieldArray = f;
+            PrintGame();
+            Console.ReadKey();
+        }
+
         public void WelcomeMessage()
         {
             Console.WriteLine("Welkom bij Goudkoorts!");
@@ -39,11 +48,32 @@ namespace Goudkoorts
             Console.WriteLine("Tijd over: *getal* seconden");
             Console.WriteLine("Aantal punten: *getal*");
             Console.WriteLine("");
-            //print game
+            PrintGame();
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Gebruik de volgende toetsen om de schakelaars te veranderen: ");
             //nog ff verzinnen hoe we dat doen
+        }
+
+        private void PrintGame()
+        {
+            String printString = "";
+            for(int y = 0; y < 10; y++)
+            {
+                for (int x = 0; x < 12; x++)
+                {
+                    if (FieldArray[x, y] != null)
+                    {
+                        printString += FieldArray[x, y].Print();
+                    }
+                    else
+                    {
+                        printString += " ";
+                    }
+                }
+                Console.WriteLine(printString);
+                printString = "";
+            }
         }
     }
 }
