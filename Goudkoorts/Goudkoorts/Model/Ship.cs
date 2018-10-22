@@ -26,7 +26,8 @@ namespace Goudkoorts
 
         public override void Move()
         {
-            throw new NotImplementedException();
+            CurrentField.NextField.Move(this);
+            CurrentField.MoveAble = null;
         }
     }
 }
