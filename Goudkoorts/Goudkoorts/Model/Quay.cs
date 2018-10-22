@@ -15,14 +15,14 @@ namespace Goudkoorts
             {
                 return MoveAble.Print();
             }
-            return "█";
+            return "▄";
         }
 
-        public override void Move()
+        public override void Move(MoveAble moveAble)
         {
+            MoveAble = moveAble;
             Ship.AmountOfGold++;
             MoveAble.IsFull = false;
-            //verder het gewone bewegen doen
         }
     }
 }

@@ -14,9 +14,14 @@ namespace Goudkoorts
             return "_";
         }
 
-        public override void Move()
+        public override void Move(MoveAble moveAble)
         {
-            //als op de volgende al een cart staat doet die niks, en als het de laatste is ook niet.
+            if (MoveAble != null || IsLast)
+            {
+                return;
+            }
+
+            MoveAble = moveAble;
         }
     }
 }

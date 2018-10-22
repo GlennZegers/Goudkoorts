@@ -21,5 +21,11 @@ namespace Goudkoorts
             }
             return "S";
         }
+
+        public override void Move()
+        {
+            CurrentField.NextField.Move(this);
+            CurrentField.MoveAble = null;
+        }
     }
 }
