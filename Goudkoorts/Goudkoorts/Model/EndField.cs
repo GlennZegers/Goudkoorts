@@ -7,9 +7,9 @@ namespace Goudkoorts
 {
     public class EndField : Field
     {
-        public override void Move()
+        public override void Move(MoveAble moveAble)
         {
-            //deze moet een MoveAble weghalen, dus het schip of een cart.
+            MoveAble = null;
         }
     }
 }

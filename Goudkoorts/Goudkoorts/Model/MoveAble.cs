@@ -11,6 +11,7 @@ namespace Goudkoorts
         public bool IsFull { get; set; }
 
         public abstract String Print();
+        public abstract void Move();
 
     }
 }

@@ -16,7 +16,7 @@ namespace Goudkoorts
 
         public String Print()
         {
-            return "⏏";
+            return "█";
         }
 
 
