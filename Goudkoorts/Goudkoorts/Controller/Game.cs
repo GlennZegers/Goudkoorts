@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Goudkoorts
 {
@@ -13,21 +14,81 @@ namespace Goudkoorts
         public InputView InputView { get; set; }
         public Field[,] FieldArray { get; set; }
         public Ship Ship { get; set; }
+        public Thread GameThread { get; set; }
 
         public Game()
         {
             FieldArray = new Field[12, 10];
             Ship = new Ship();
             GenerateFields();
+            LinkFields();
             OutputView = new OutputView(FieldArray);
-            
+            GameThread = new Thread(Play);
+        }
+
+        public void Play()
+        {
+
         }
 
         private void LinkFields()
         {
-            for (int i =12; i > 0; i--)
+            for (int i =11; i > 0; i--)
             {
-                FieldArray[i, 0].NextField = FieldArray[i + 1, 0];
+                FieldArray[i, 0].NextField = FieldArray[i - 1, 0];
+            }
+            for (int i = 11; i > 0; i--)
+            {
+                FieldArray[i, 1].NextField = FieldArray[i - 1, 1];
+            }
+            FieldArray[11, 2].NextField = FieldArray[11, 1];
+            FieldArray[11, 3].NextField = FieldArray[11, 2];
+            FieldArray[11, 4].NextField = FieldArray[11, 3];
+
+            for(int i = 0; i < 3; i++)
+            {
+                FieldArray[i, 3].NextField = FieldArray[i + 1, 3];
+            }
+
+            for (int i = 5; i < 10; i++)
+            {
+                FieldArray[i, 3].NextField = FieldArray[i + 1, 3];
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                FieldArray[i, 5].NextField = FieldArray[i + 1, 5];
+            }
+
+            FieldArray[3, 3].NextField = FieldArray[3, 4];
+            FieldArray[3, 5].NextField = FieldArray[3, 4];
+            FieldArray[3, 4].NextField = FieldArray[4, 4];
+            FieldArray[4, 4].NextField = FieldArray[5, 4];
+            FieldArray[5, 4].NextField = FieldArray[5, 3];
+            FieldArray[9, 3].NextField = FieldArray[9, 4];
+            FieldArray[9, 4].NextField = FieldArray[10, 4];
+            FieldArray[10, 4].NextField = FieldArray[11, 4];
+            FieldArray[5, 5].NextField = FieldArray[6, 6];
+            FieldArray[6, 6].NextField = FieldArray[6, 7];
+            FieldArray[8, 6].NextField = FieldArray[9, 5];
+            FieldArray[9, 5].NextField = FieldArray[9, 4];
+            FieldArray[6, 7].NextField = FieldArray[7, 7];
+            FieldArray[7, 7].NextField = FieldArray[8, 7];
+            FieldArray[8, 7].NextField = FieldArray[8, 8];
+
+            for (int i = 0; i < 6; i++)
+            {
+                FieldArray[i, 8].NextField = FieldArray[i + 1, 8];
+            }
+            FieldArray[6, 8].NextField = FieldArray[6, 7];
+            FieldArray[8, 8].NextField = FieldArray[9, 8];
+            FieldArray[9, 8].NextField = FieldArray[10, 8];
+            FieldArray[10, 8].NextField = FieldArray[11, 8];
+            FieldArray[11, 8].NextField = FieldArray[11, 9];
+
+            for(int i = 10; i > 1; i--)
+            {
+                FieldArray[i, 9].NextField = FieldArray[i - 1, 9];
             }
         }
 
@@ -61,27 +122,22 @@ namespace Goudkoorts
                     FieldArray[i, 3] = new Field();
                 }
             }
-            FieldArray[3, 4] = new Switch();
+            FieldArray[3, 5] = new Field();
             FieldArray[4, 4] = new Field();
-            FieldArray[5, 4] = new Switch();
-            FieldArray[9, 4] = new Switch();
             FieldArray[10, 4] = new Field();
             FieldArray[11, 4] = new Field();
             FieldArray[0, 5] = new Warehouse();
             FieldArray[1, 5] = new Field();
             FieldArray[2, 5] = new Field();
-            FieldArray[3, 5] = new Field();
             FieldArray[5, 5] = new Field();
             FieldArray[9, 5] = new Field();
             FieldArray[6, 6] = new Field();
             FieldArray[8, 6] = new Field();
-            FieldArray[6, 7] = new Switch();
             FieldArray[7, 7] = new Field();
-            FieldArray[8, 7] = new Switch();
             FieldArray[0, 8] = new Warehouse();
             for(int i = 1; i < 12; i++)
             {
-                if( i != 8)
+                if( i != 7)
                 {
                     FieldArray[i, 8] = new Field();
                 }
@@ -95,6 +151,11 @@ namespace Goudkoorts
                     FieldArray[i, 9] = new Field();
                 }
             }
+            FieldArray[5, 4] = new Switch { UpperField = FieldArray[5, 3], LowerField = FieldArray[5, 5] };
+            FieldArray[9, 4] = new Switch { UpperField = FieldArray[9, 3], LowerField = FieldArray[9, 5] };
+            FieldArray[8, 7] = new Switch { UpperField = FieldArray[8, 6], LowerField = FieldArray[8, 8] };
+            FieldArray[6, 7] = new Switch { UpperField = FieldArray[6, 6], LowerField = FieldArray[6, 8] };
+            FieldArray[3, 4] = new Switch { UpperField = FieldArray[3, 3], LowerField = FieldArray[3, 5] };
         }
     }
 }
