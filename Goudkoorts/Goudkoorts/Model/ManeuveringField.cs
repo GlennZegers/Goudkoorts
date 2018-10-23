@@ -7,8 +7,6 @@ namespace Goudkoorts
 {
     public class ManeuveringField : Field
     {
-        public bool IsLast { get; set; }
-
         public override String Print()
         {
             return "_";
@@ -16,7 +14,7 @@ namespace Goudkoorts
 
         public override void Move(MoveAble moveAble)
         {
-            if (MoveAble != null || IsLast)
+            if (MoveAble != null)
             {
                 return;
             }
