@@ -51,8 +51,7 @@ namespace Goudkoorts
             PrintGame();
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("Gebruik de volgende toetsen om de schakelaars te veranderen: ");
-            //nog ff verzinnen hoe we dat doen
+            Console.WriteLine("Gebruik de toetsen 1 t/m 5 op je numpad om de schakelaars te veranderen");
         }
 
         private void PrintGame()
