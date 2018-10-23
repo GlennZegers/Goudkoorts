@@ -12,5 +12,10 @@ namespace Goudkoorts.Model
         {
             return;
         }
+
+        public override string Print()
+        {
+            return " ";
+        }
     }
 }

@@ -42,18 +42,23 @@ namespace Goudkoorts
             {
                 Carts.Add(w.SpawnCart());
             }
+            OutputView.StandardScreen();
             while (true)
             {
+                int MaxTime = DateTime.Now.Second + 5;
+                while (DateTime.Now.Second <= MaxTime)
+                {
+                    InputView.ChangeSwitch();
+                    OutputView.StandardScreen();
+                }
 
-
-                //foreach (var c in Carts)
-                //{
-                //    c.Move();
-                //}
-               
-                Thread.Sleep(1000);
-                InputView.ChangeSwitch();
+                foreach (var c in Carts)
+                {
+                    c.Move();
+                }
+                Thread.Sleep(2000);
                 OutputView.StandardScreen();
+                Thread.Sleep(2000);
             }
 
         }
@@ -182,7 +187,7 @@ namespace Goudkoorts
             }
             FieldArray[1, 9] = new ManeuveringField();
             FieldArray[0, 9] = new EndManeuveringField();
-            for(int i = 2; i< 11; i++)
+            for(int i = 2; i< 12; i++)
             {
                 FieldArray[i, 9] = new ManeuveringField();
                 if(i == 9 || i == 10 || i == 11)
@@ -190,13 +195,13 @@ namespace Goudkoorts
                     FieldArray[i, 9] = new Field();
                 }
             }
-            Switch TempSwitch = new Switch { UpperField = FieldArray[5, 3], LowerField = FieldArray[5, 5] };
+            Switch TempSwitch = new Switch { UpperField = FieldArray[5, 3], LowerField = FieldArray[5, 5], MayChangeNextField = true };
             FieldArray[5, 4] = TempSwitch;
             Switches.Add(TempSwitch);
             TempSwitch = new Switch { UpperField = FieldArray[9, 3], LowerField = FieldArray[9, 5] };
             FieldArray[9, 4] = TempSwitch;
             Switches.Add(TempSwitch);
-            TempSwitch = new Switch { UpperField = FieldArray[8, 6], LowerField = FieldArray[8, 8] };
+            TempSwitch = new Switch { UpperField = FieldArray[8, 6], LowerField = FieldArray[8, 8], MayChangeNextField = true};
             FieldArray[8, 7] = TempSwitch;
             Switches.Add(TempSwitch);
             TempSwitch = new Switch { UpperField = FieldArray[6, 6], LowerField = FieldArray[6, 8] };
