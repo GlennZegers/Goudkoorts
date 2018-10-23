@@ -13,7 +13,7 @@ namespace Goudkoorts
 
         public override void Move(MoveAble moveAble)
         {
-            //deze moet hem of aan de upperfield geven of aan de lowerfield
+            
         }
 
         public void Commute()

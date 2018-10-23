@@ -13,21 +13,21 @@
   <Class Name="Goudkoorts.Switch">
     <Position X="2" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAIAAAAAIAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAIAAAAAIAAAAAAAAIAAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Switch.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Cart">
     <Position X="6.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Game">
     <Position X="3.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAAABAAAAAAAIAKAAAAACAAAAAiAAEAEAQAAA=</HashCode>
       <FileName>Controller\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -39,12 +39,9 @@
   <Class Name="Goudkoorts.Warehouse">
     <Position X="3.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAA=</HashCode>
       <FileName>Model\Warehouse.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="StartField" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.ManeuveringField">
     <Position X="4.25" Y="6.25" Width="1.5" />
@@ -56,21 +53,21 @@
   <Class Name="Goudkoorts.WaterField">
     <Position X="6.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\WaterField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Ship">
     <Position X="13.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAIAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.MoveAble">
     <Position X="9" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAEAAAAAAAAIAAAAAAAEAAA=</HashCode>
       <FileName>Model\MoveAble.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -94,14 +91,14 @@
   <Class Name="Goudkoorts.InputView">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\InputView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.OutputView">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>View\OutputView.cs</FileName>
     </TypeIdentifier>
   </Class>

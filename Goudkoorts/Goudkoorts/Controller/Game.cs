@@ -15,20 +15,52 @@ namespace Goudkoorts
         public Field[,] FieldArray { get; set; }
         public Ship Ship { get; set; }
         public Thread GameThread { get; set; }
+        public List<Warehouse> Warehouses { get; set; }
+        public List<Cart> Carts { get; set; }
+        public List<Switch> Switches { get; set; }
+        
 
         public Game()
         {
+            Switches = new List<Switch>();
+            Warehouses = new List<Warehouse>();
+            Carts = new List<Cart>();
             FieldArray = new Field[12, 10];
             Ship = new Ship();
             GenerateFields();
             LinkFields();
             OutputView = new OutputView(FieldArray);
+            InputView = new InputView(this);
+            OutputView.WelcomeMessage();
             GameThread = new Thread(Play);
+            GameThread.Start();
         }
 
         public void Play()
         {
+            foreach (var w in Warehouses)
+            {
+                Carts.Add(w.SpawnCart());
+            }
+            while (true)
+            {
 
+
+                //foreach (var c in Carts)
+                //{
+                //    c.Move();
+                //}
+               
+                Thread.Sleep(1000);
+                InputView.ChangeSwitch();
+                OutputView.StandardScreen();
+            }
+
+        }
+
+        public void CommuteASwitch(int number)
+        {
+            Switches.ElementAt(number).Commute();
         }
 
         private void LinkFields()
@@ -114,8 +146,10 @@ namespace Goudkoorts
                 }
             }
             FieldArray[11, 2] = new Field();
-            FieldArray[0, 3] = new Warehouse();
-            for(int i = 1; i< 12; i++)
+            Warehouse TempHouse = new Warehouse();
+            FieldArray[0, 3] = TempHouse;
+            Warehouses.Add(TempHouse);
+            for (int i = 1; i< 12; i++)
             {
                 if(i!= 4 && i != 10)
                 {
@@ -126,7 +160,9 @@ namespace Goudkoorts
             FieldArray[4, 4] = new Field();
             FieldArray[10, 4] = new Field();
             FieldArray[11, 4] = new Field();
-            FieldArray[0, 5] = new Warehouse();
+            TempHouse = new Warehouse();
+            FieldArray[0, 5] = TempHouse;
+            Warehouses.Add(TempHouse);
             FieldArray[1, 5] = new Field();
             FieldArray[2, 5] = new Field();
             FieldArray[5, 5] = new Field();
@@ -134,8 +170,10 @@ namespace Goudkoorts
             FieldArray[6, 6] = new Field();
             FieldArray[8, 6] = new Field();
             FieldArray[7, 7] = new Field();
-            FieldArray[0, 8] = new Warehouse();
-            for(int i = 1; i < 12; i++)
+            TempHouse = new Warehouse();
+            FieldArray[0, 8] = TempHouse;
+            Warehouses.Add(TempHouse);
+            for (int i = 1; i < 12; i++)
             {
                 if( i != 7)
                 {
@@ -151,11 +189,21 @@ namespace Goudkoorts
                     FieldArray[i, 9] = new Field();
                 }
             }
-            FieldArray[5, 4] = new Switch { UpperField = FieldArray[5, 3], LowerField = FieldArray[5, 5] };
-            FieldArray[9, 4] = new Switch { UpperField = FieldArray[9, 3], LowerField = FieldArray[9, 5] };
-            FieldArray[8, 7] = new Switch { UpperField = FieldArray[8, 6], LowerField = FieldArray[8, 8] };
-            FieldArray[6, 7] = new Switch { UpperField = FieldArray[6, 6], LowerField = FieldArray[6, 8] };
-            FieldArray[3, 4] = new Switch { UpperField = FieldArray[3, 3], LowerField = FieldArray[3, 5] };
+            Switch TempSwitch = new Switch { UpperField = FieldArray[5, 3], LowerField = FieldArray[5, 5] };
+            FieldArray[5, 4] = TempSwitch;
+            Switches.Add(TempSwitch);
+            TempSwitch = new Switch { UpperField = FieldArray[9, 3], LowerField = FieldArray[9, 5] };
+            FieldArray[9, 4] = TempSwitch;
+            Switches.Add(TempSwitch);
+            TempSwitch = new Switch { UpperField = FieldArray[8, 6], LowerField = FieldArray[8, 8] };
+            FieldArray[8, 7] = TempSwitch;
+            Switches.Add(TempSwitch);
+            TempSwitch = new Switch { UpperField = FieldArray[6, 6], LowerField = FieldArray[6, 8] };
+            FieldArray[6, 7] = TempSwitch;
+            Switches.Add(TempSwitch);
+            TempSwitch = new Switch { UpperField = FieldArray[3, 3], LowerField = FieldArray[3, 5] };
+            FieldArray[3, 4] = TempSwitch;
+            Switches.Add(TempSwitch);
         }
     }
 }

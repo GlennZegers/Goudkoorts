@@ -12,8 +12,6 @@ namespace Goudkoorts
         public OutputView(Field[,] f)
         {
             FieldArray = f;
-            PrintGame();
-            Console.ReadKey();
         }
 
         public void WelcomeMessage()
@@ -45,6 +43,7 @@ namespace Goudkoorts
 
         public void StandardScreen()
         {
+            Console.Clear();
             Console.WriteLine("Tijd over: *getal* seconden");
             Console.WriteLine("Aantal punten: *getal*");
             Console.WriteLine("");

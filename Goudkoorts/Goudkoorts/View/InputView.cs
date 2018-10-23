@@ -7,6 +7,13 @@ namespace Goudkoorts
 {
     public class InputView
     {
+        public Game Game { get; set; }
+
+        public InputView(Game game)
+        {
+            Game = game;
+        }
+
         public void ChangeSwitch()
         {
             bool IsValid = false;
@@ -18,23 +25,23 @@ namespace Goudkoorts
                 switch (Input)
                 {
                     case ConsoleKey.NumPad1:
-                        //switch methode
+                        Game.CommuteASwitch(0);
                         IsValid = true;
                         break;
                     case ConsoleKey.NumPad2:
-                        //switch methode
+                        Game.CommuteASwitch(1);
                         IsValid = true;
                         break;
                     case ConsoleKey.NumPad3:
-                        //switch methode
+                        Game.CommuteASwitch(2);
                         IsValid = true;
                         break;
                     case ConsoleKey.NumPad4:
-                        //switch methode
+                        Game.CommuteASwitch(3);
                         IsValid = true;
                         break;
                     case ConsoleKey.NumPad5:
-                        //switch methode
+                        Game.CommuteASwitch(4);
                         IsValid = true;
                         break;
                     default:

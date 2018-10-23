@@ -12,7 +12,8 @@ namespace Goudkoorts
         
         public virtual void Move(MoveAble moveAble)
         {
-            MoveAble = moveAble;
+            moveAble.CurrentField = this;
+            this.MoveAble = moveAble;
         }
 
         public virtual String Print()

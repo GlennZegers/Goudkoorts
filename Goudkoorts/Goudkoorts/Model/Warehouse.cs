@@ -7,11 +7,13 @@ namespace Goudkoorts
 {
     public class Warehouse : Field
     {
-        public Field StartField { get; set; }
 
-        public void SpawnCart()
+        public Cart SpawnCart()
         {
-            StartField.MoveAble = new Cart();
+            Cart tempCart = new Cart();
+            NextField.MoveAble = tempCart;
+            tempCart.CurrentField = NextField;
+            return tempCart;
         }
 
         public override String Print()

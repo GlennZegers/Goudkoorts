@@ -24,8 +24,8 @@ namespace Goudkoorts
 
         public override void Move()
         {
-            CurrentField.NextField.Move(this);
             CurrentField.MoveAble = null;
+            CurrentField.NextField.Move(this);
         }
     }
 }
