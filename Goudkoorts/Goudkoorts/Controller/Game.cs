@@ -118,7 +118,7 @@ namespace Goudkoorts
             FieldArray[10, 8].NextField = FieldArray[11, 8];
             FieldArray[11, 8].NextField = FieldArray[11, 9];
 
-            for(int i = 10; i > 1; i--)
+            for(int i = 10; i > 0; i--)
             {
                 FieldArray[i, 9].NextField = FieldArray[i - 1, 9];
             }
@@ -180,7 +180,8 @@ namespace Goudkoorts
                     FieldArray[i, 8] = new Field();
                 }
             }
-            FieldArray[1, 9] = new ManeuveringField { IsLast = true };
+            FieldArray[1, 9] = new ManeuveringField();
+            FieldArray[0, 9] = new EndManeuveringField();
             for(int i = 2; i< 11; i++)
             {
                 FieldArray[i, 9] = new ManeuveringField();
