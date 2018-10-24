@@ -17,8 +17,7 @@ namespace Goudkoorts
         public Thread GameThread { get; set; }
         public List<Warehouse> Warehouses { get; set; }
         public List<Cart> Carts { get; set; }
-        public List<Switch> Switches { get; set; }
-        
+        public List<Switch> Switches { get; set; }      
 
         public Game()
         {
@@ -54,7 +53,10 @@ namespace Goudkoorts
 
                 foreach (var c in Carts)
                 {
-                    c.Move();
+                    if (c.Move())
+                    {
+
+                    }
                 }
                 Thread.Sleep(2000);
                 OutputView.StandardScreen();
@@ -123,7 +125,7 @@ namespace Goudkoorts
             FieldArray[10, 8].NextField = FieldArray[11, 8];
             FieldArray[11, 8].NextField = FieldArray[11, 9];
 
-            for(int i = 10; i > 0; i--)
+            for(int i = 11; i > 0; i--)
             {
                 FieldArray[i, 9].NextField = FieldArray[i - 1, 9];
             }

@@ -12,7 +12,7 @@ namespace Goudkoorts
         public bool DirectionIsUp { get; set; }
         public bool MayChangeNextField { get; set; }
 
-        public override void Move(MoveAble moveAble)
+        public override bool Move(MoveAble moveAble)
         {
             if (!MayChangeNextField)
             {
@@ -22,10 +22,11 @@ namespace Goudkoorts
                     {
                         moveAble.CurrentField = this;
                         this.MoveAble = moveAble;
+                        return true;
                     }
                     else
                     {
-                        return;
+                        return true;
                     }
                 }
                 else
@@ -34,10 +35,11 @@ namespace Goudkoorts
                     {
                         moveAble.CurrentField = this;
                         this.MoveAble = moveAble;
+                        return true;
                     }
                     else
                     {
-                        return;
+                        return true;
                     }
                 }
             }
@@ -45,6 +47,7 @@ namespace Goudkoorts
             {
                 moveAble.CurrentField = this;
                 this.MoveAble = moveAble;
+                return true;
             }
         }
 
@@ -70,6 +73,10 @@ namespace Goudkoorts
 
         public override string Print()
         {
+            if (MoveAble != null)
+            {
+                return MoveAble.Print();
+            }
             if (MayChangeNextField)
             {
                 if (DirectionIsUp)

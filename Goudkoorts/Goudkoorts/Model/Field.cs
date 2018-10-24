@@ -10,10 +10,15 @@ namespace Goudkoorts
         public Field NextField { get; set; }
         public MoveAble MoveAble { get; set; }
         
-        public virtual void Move(MoveAble moveAble)
+        public virtual bool Move(MoveAble moveAble)
         {
+            if(MoveAble != null)
+            {
+                return false;
+            }
             moveAble.CurrentField = this;
             this.MoveAble = moveAble;
+            return true;
         }
 
         public virtual String Print()
