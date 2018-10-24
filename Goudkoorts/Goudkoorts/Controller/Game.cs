@@ -18,10 +18,12 @@ namespace Goudkoorts
         public Thread GameThread { get; set; }
         public List<Warehouse> Warehouses { get; set; }
         public List<Cart> Carts { get; set; }
-        public List<Switch> Switches { get; set; }      
+        public List<Switch> Switches { get; set; } 
+        public int Points { get; set; }
 
         public Game()
         {
+            Points = 0;
             Switches = new List<Switch>();
             Warehouses = new List<Warehouse>();
             Carts = new List<Cart>();
@@ -29,7 +31,7 @@ namespace Goudkoorts
             Ship = new Ship();
             GenerateFields();
             LinkFields();
-            OutputView = new OutputView(FieldArray);
+            OutputView = new OutputView(FieldArray, this);
             InputView = new InputView(this);
             OutputView.WelcomeMessage();
             GameThread = new Thread(Play);
@@ -137,12 +139,15 @@ namespace Goudkoorts
 
         private void GenerateFields()
         {
+            WaterField TempWaterField2 = null;
             FieldArray[0, 0] = new EndWaterField();
             for(int i = 1; i < 12; i++)
             {
-                FieldArray[i, 0] = new WaterField();
-                if(i == 9)
+                WaterField TempWaterField =  new WaterField { Game = this };
+                FieldArray[i, 0] = TempWaterField;
+                if (i == 9)
                 {
+                    TempWaterField2 = TempWaterField;
                     FieldArray[i, 0].MoveAble = this.Ship;
                     Ship.CurrentField = FieldArray[i, 0];
                 }
@@ -152,8 +157,10 @@ namespace Goudkoorts
             {
                 FieldArray[i, 1] = new Field();
                 if( i == 9)
-                {
-                    FieldArray[i, 1] = new Quay { Ship = this.Ship};
+                {   
+                    Quay TempQuay = new Quay { Ship = this.Ship, Game = this };
+                    FieldArray[i, 1] = TempQuay;
+                    TempWaterField2.LowerField = TempQuay;
                 }
             }
             FieldArray[11, 2] = new Field();

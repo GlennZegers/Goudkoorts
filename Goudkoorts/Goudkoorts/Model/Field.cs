@@ -9,7 +9,7 @@ namespace Goudkoorts
     {
         public Field NextField { get; set; }
         public MoveAble MoveAble { get; set; }
-        
+
         public virtual bool Move(MoveAble moveAble)
         {
             if(MoveAble != null)

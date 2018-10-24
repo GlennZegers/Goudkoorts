@@ -8,6 +8,7 @@ namespace Goudkoorts
     public class Quay : Field
     {
         public MoveAble Ship { get; set; }
+        public Game Game { get; set; }
 
         public override string Print()
         {
@@ -18,18 +19,20 @@ namespace Goudkoorts
             return "▄";
         }
 
-        public override void Move(MoveAble moveAble)
+        public override bool Move(MoveAble moveAble)
         {
             MoveAble = moveAble;
-
             if (Ship != null)
             {
-                Ship.AmountOfGold++;
-                if (Ship.AmountOfGold >= 10)
+                Ship.AmountOfGold += moveAble.AmountOfGold;
+
+                if (Ship.AmountOfGold >= 8)
                 {
+                    Ship.IsFull = true;
                     Ship.MayNotMove = false;
                 }
                 MoveAble.IsFull = false;
+                MoveAble.AmountOfGold = 0;
 
 
                 //if (Ship.IsFull)
@@ -37,6 +40,7 @@ namespace Goudkoorts
                 //    NextField.Move(moveAble);
                 //}
             }
+            return true;
         }
     }
 }

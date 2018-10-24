@@ -8,9 +8,11 @@ namespace Goudkoorts
     public class OutputView
     {
         public Field[,] FieldArray { get; set; }
+        public Game Game {get;set;}
 
-        public OutputView(Field[,] f)
+        public OutputView(Field[,] f, Game game)
         {
+            Game = game;
             FieldArray = f;
         }
 
@@ -44,8 +46,7 @@ namespace Goudkoorts
         public void StandardScreen()
         {
             Console.Clear();
-            Console.WriteLine("Tijd over: *getal* seconden");
-            Console.WriteLine("Aantal punten: *getal*");
+            Console.WriteLine("Aantal punten: " + Game.Points);
             Console.WriteLine("");
             PrintGame();
             Console.WriteLine("");
