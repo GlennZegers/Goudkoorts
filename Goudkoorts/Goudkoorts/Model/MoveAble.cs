@@ -9,6 +9,7 @@ namespace Goudkoorts
     {
         public Field CurrentField { get; set; }
         public bool IsFull { get; set; }
+        public int AmountOfGold { get; set; }
 
         public abstract String Print();
         public abstract void Move();

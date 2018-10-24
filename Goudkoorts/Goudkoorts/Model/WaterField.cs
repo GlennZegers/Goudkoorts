@@ -7,6 +7,8 @@ namespace Goudkoorts
 {
     public class WaterField : Field
     {
+        public Quay LowerField { get; set;}
+
         public override string Print()
         {
             if(MoveAble != null)
@@ -18,11 +20,20 @@ namespace Goudkoorts
 
         public override void Move(MoveAble moveAble)
         {
-            //if (lowerfield != null) 
-            //{
-            //    lowerfield(quay).Move(moveAble);
-            //if lowerfield.ship == null >> ship = Moveable
-            //}
+            if (MoveAble != null)
+            {
+                return;
+            }
+
+            if (LowerField != null)
+            {
+                LowerField.Move(moveAble);
+
+                if (LowerField.Ship == null)
+                {
+                    LowerField.Ship = moveAble;
+                }
+            }
             MoveAble = moveAble;
         }
     }

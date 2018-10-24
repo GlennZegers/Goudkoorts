@@ -7,7 +7,6 @@ namespace Goudkoorts
 {
     public class Ship : MoveAble
     {
-        public int AmountOfGold { get; set; }
 
         public Ship()
         {
