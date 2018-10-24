@@ -25,12 +25,17 @@ namespace Goudkoorts
             if (Ship != null)
             {
                 Ship.AmountOfGold++;
+                if (Ship.AmountOfGold >= 10)
+                {
+                    Ship.MayNotMove = false;
+                }
                 MoveAble.IsFull = false;
 
-                if (Ship.IsFull)
-                {
-                    NextField.Move(moveAble);
-                }
+
+                //if (Ship.IsFull)
+                //{
+                //    NextField.Move(moveAble);
+                //}
             }
         }
     }

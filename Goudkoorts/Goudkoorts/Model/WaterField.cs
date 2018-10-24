@@ -27,13 +27,21 @@ namespace Goudkoorts
 
             if (LowerField != null)
             {
-                LowerField.Move(moveAble);
+                //LowerField.Move(moveAble);
 
                 if (LowerField.Ship == null)
                 {
+                    MoveAble = moveAble;
+                    moveAble.MayNotMove = true;
                     LowerField.Ship = moveAble;
                 }
+
+                if (moveAble.MayNotMove)
+                {
+                    return;
+                }
             }
+
             MoveAble = moveAble;
         }
     }
