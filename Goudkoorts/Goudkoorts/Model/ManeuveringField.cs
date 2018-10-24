@@ -12,14 +12,13 @@ namespace Goudkoorts
             return "_";
         }
 
-        public override void Move(MoveAble moveAble)
+        public override bool Move(MoveAble moveAble)
         {
-            if (MoveAble != null)
+            if (MoveAble == null)
             {
-                return;
+                MoveAble = moveAble;
             }
-
-            MoveAble = moveAble;
+            return true;
         }
     }
 }

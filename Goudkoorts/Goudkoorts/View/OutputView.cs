@@ -53,6 +53,13 @@ namespace Goudkoorts
             Console.WriteLine("Gebruik de toetsen 1 t/m 5 op je numpad om de schakelaars te veranderen");
         }
 
+        public void ShowEndScreen()
+        {
+            Console.Clear();
+            Console.WriteLine("Aantal punten: *getal*");
+            Console.WriteLine("Druk op enter om het spel te beëindigen");
+        }
+
         private void PrintGame()
         {
             String printString = "";

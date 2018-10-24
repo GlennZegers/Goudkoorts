@@ -7,9 +7,10 @@ namespace Goudkoorts
 {
     public class EndField : Field
     {
-        public override void Move(MoveAble moveAble)
+        public override bool Move(MoveAble moveAble)
         {
             MoveAble = null;
+            return true;
         }
     }
 }

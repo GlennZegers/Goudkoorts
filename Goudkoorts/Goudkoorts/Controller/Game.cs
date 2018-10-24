@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
+
 namespace Goudkoorts
 {
     public class Game
@@ -44,18 +45,14 @@ namespace Goudkoorts
             OutputView.StandardScreen();
             while (true)
             {
-                int MaxTime = DateTime.Now.Second + 5;
-                while (DateTime.Now.Second <= MaxTime)
-                {
-                    InputView.ChangeSwitch();
-                    OutputView.StandardScreen();
-                }
+                InputView.ChangeSwitch();
+                OutputView.StandardScreen();
 
                 foreach (var c in Carts)
                 {
-                    if (c.Move())
+                    if (!c.Move())
                     {
-
+                        EndGame();
                     }
                 }
                 Thread.Sleep(2000);
@@ -63,6 +60,13 @@ namespace Goudkoorts
                 Thread.Sleep(2000);
             }
 
+        }
+
+        private void EndGame()
+        {
+            OutputView.ShowEndScreen();
+            Console.ReadKey();
+            Environment.Exit(0);
         }
 
         public void CommuteASwitch(int number)

@@ -8,9 +8,9 @@ namespace Goudkoorts.Model
 {
     public class EndManeuveringField : Field
     {
-        public override void Move(MoveAble moveAble)
+        public override bool Move(MoveAble moveAble)
         {
-            return;
+            return true;
         }
 
         public override string Print()

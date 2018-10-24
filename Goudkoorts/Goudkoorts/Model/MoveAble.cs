@@ -12,7 +12,7 @@ namespace Goudkoorts
         public int AmountOfGold { get; set; }
 
         public abstract String Print();
-        public abstract void Move();
+        public abstract bool Move();
 
     }
 }

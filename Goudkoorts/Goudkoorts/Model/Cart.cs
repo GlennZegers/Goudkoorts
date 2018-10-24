@@ -11,6 +11,7 @@ namespace Goudkoorts
         public Cart()
         {
             IsFull = true;
+            AmountOfGold = 1;
         }
 
         public override string Print()
@@ -22,10 +23,11 @@ namespace Goudkoorts
             return "S";
         }
 
-        public override void Move()
+        public override bool Move()
         {
             CurrentField.MoveAble = null;
-            CurrentField.NextField.Move(this);
+            return CurrentField.NextField.Move(this);
+
         }
     }
 }

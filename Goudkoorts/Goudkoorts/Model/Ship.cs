@@ -23,10 +23,10 @@ namespace Goudkoorts
             return "O";
         }
 
-        public override void Move()
+        public override bool Move()
         {
-            CurrentField.NextField.Move(this);
             CurrentField.MoveAble = null;
+            return CurrentField.NextField.Move(this);
         }
     }
 }
