@@ -14,6 +14,11 @@ namespace Goudkoorts
 
         public override bool Move(MoveAble moveAble)
         {
+            if (MoveAble != null)
+            {
+                return false;
+            }
+
             if (!MayChangeNextField)
             {
                 if (DirectionIsUp)

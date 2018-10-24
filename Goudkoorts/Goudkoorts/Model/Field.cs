@@ -16,6 +16,7 @@ namespace Goudkoorts
             {
                 return false;
             }
+           // MoveAble.CurrentField.MoveAble = null;
             moveAble.CurrentField = this;
             this.MoveAble = moveAble;
             return true;
