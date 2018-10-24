@@ -7,7 +7,7 @@ namespace Goudkoorts
 {
     public class Quay : Field
     {
-        public Ship Ship { get; set; }
+        public MoveAble Ship { get; set; }
 
         public override string Print()
         {
@@ -21,11 +21,12 @@ namespace Goudkoorts
         public override void Move(MoveAble moveAble)
         {
             MoveAble = moveAble;
-            Ship.AmountOfGold++;
-            MoveAble.IsFull = false;
 
             if (Ship != null)
             {
+                Ship.AmountOfGold++;
+                MoveAble.IsFull = false;
+
                 if (Ship.IsFull)
                 {
                     NextField.Move(moveAble);
