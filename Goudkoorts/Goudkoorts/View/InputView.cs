@@ -20,12 +20,13 @@ namespace Goudkoorts
             int MaxTime = DateTime.Now.Second + 5;
             while (DateTime.Now.Second <= MaxTime)
             {
+                IsValid = false;
                 while (!IsValid)
                 {
-                    if (DateTime.Now.Second >= MaxTime)
-                    {
-                        break;
-                    }
+                    //if (DateTime.Now.Second >= MaxTime)
+                    //{
+                    //    break;
+                    //}
                     var Input = Console.ReadKey(false).Key;
 
                     switch (Input)
@@ -55,6 +56,7 @@ namespace Goudkoorts
                             break;
                     }
                 }
+                IsValid = false;
                 Game.OutputView.StandardScreen();
             }
         }
