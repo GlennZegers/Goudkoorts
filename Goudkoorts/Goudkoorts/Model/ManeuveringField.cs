@@ -9,6 +9,10 @@ namespace Goudkoorts
     {
         public override String Print()
         {
+            if (MoveAble != null)
+            {
+                return MoveAble.Print();
+            }
             return "_";
         }
 
@@ -17,6 +21,8 @@ namespace Goudkoorts
             if (MoveAble == null)
             {
                 MoveAble = moveAble;
+                moveAble.CurrentField.MoveAble = null;
+                moveAble.CurrentField = this;
             }
             return true;
         }
