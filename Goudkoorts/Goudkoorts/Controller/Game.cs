@@ -20,6 +20,7 @@ namespace Goudkoorts
         public List<Cart> Carts { get; set; }
         public List<Switch> Switches { get; set; } 
         public int Points { get; set; }
+        public WaterField ShipField { get; set; }
 
         public Game()
         {
@@ -38,25 +39,36 @@ namespace Goudkoorts
             GameThread.Start();
         }
 
+        public void SpawnShip()
+        {
+            Ship = new Ship();
+            ShipField.MoveAble = Ship;
+            Ship.CurrentField = ShipField;
+
+        }
+
         public void Play()
         {
-            foreach (var w in Warehouses)
+           // for (int i =0; i < 2; i++)
             {
-                Carts.Add(w.SpawnCart());
+                Carts.Add(Warehouses.ElementAt(2).SpawnCart());
+               Carts.Add( Warehouses.ElementAt(0).SpawnCart());
             }
             OutputView.StandardScreen();
             while (true)
             {
                 InputView.ChangeSwitch();
                 OutputView.StandardScreen();
-
+                
                 foreach (var c in Carts)
                 {
                     if (!c.Move())
                     {
                         EndGame();
                     }
+               
                 }
+                Ship.Move();
                 //Thread.Sleep(2000);
                 OutputView.StandardScreen();
                // Thread.Sleep(2000);
@@ -140,7 +152,7 @@ namespace Goudkoorts
         private void GenerateFields()
         {
             WaterField TempWaterField2 = null;
-            FieldArray[0, 0] = new EndWaterField();
+            FieldArray[0, 0] = new EndWaterField { Game = this};
             for(int i = 1; i < 12; i++)
             {
                 WaterField TempWaterField =  new WaterField { Game = this };
@@ -148,8 +160,13 @@ namespace Goudkoorts
                 if (i == 9)
                 {
                     TempWaterField2 = TempWaterField;
-                    FieldArray[i, 0].MoveAble = this.Ship;
-                    Ship.CurrentField = FieldArray[i, 0];
+
+                }
+                if(i == 11)
+                {
+                    TempWaterField.MoveAble = this.Ship;
+                    Ship.CurrentField = TempWaterField;
+                    ShipField = TempWaterField;
                 }
             }
             FieldArray[0, 1] = new EndField();
@@ -158,13 +175,13 @@ namespace Goudkoorts
                 FieldArray[i, 1] = new Field();
                 if( i == 9)
                 {   
-                    Quay TempQuay = new Quay { Ship = this.Ship, Game = this };
+                    Quay TempQuay = new Quay { Game = this };
                     FieldArray[i, 1] = TempQuay;
                     TempWaterField2.LowerField = TempQuay;
                 }
             }
             FieldArray[11, 2] = new Field();
-            Warehouse TempHouse = new Warehouse();
+            Warehouse TempHouse = new Warehouse { Game = this };
             FieldArray[0, 3] = TempHouse;
             Warehouses.Add(TempHouse);
             for (int i = 1; i< 12; i++)
@@ -178,7 +195,7 @@ namespace Goudkoorts
             FieldArray[4, 4] = new Field();
             FieldArray[10, 4] = new Field();
             FieldArray[11, 4] = new Field();
-            TempHouse = new Warehouse();
+            TempHouse = new Warehouse {Game = this };
             FieldArray[0, 5] = TempHouse;
             Warehouses.Add(TempHouse);
             FieldArray[1, 5] = new Field();
@@ -188,7 +205,7 @@ namespace Goudkoorts
             FieldArray[6, 6] = new Field();
             FieldArray[8, 6] = new Field();
             FieldArray[7, 7] = new Field();
-            TempHouse = new Warehouse();
+            TempHouse = new Warehouse { Game = this };
             FieldArray[0, 8] = TempHouse;
             Warehouses.Add(TempHouse);
             for (int i = 1; i < 12; i++)

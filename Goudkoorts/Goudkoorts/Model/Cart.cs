@@ -7,9 +7,10 @@ namespace Goudkoorts
 {
     public class Cart : MoveAble
     {
-
-        public Cart()
+        public Game Game { get; set; }
+        public Cart(Game Game)
         {
+            this.Game = Game;
             IsFull = true;
             AmountOfGold = 1;
         }
@@ -25,6 +26,11 @@ namespace Goudkoorts
 
         public override bool Move()
         {
+            if(CurrentField == null)
+            {
+                Game.Carts.Remove(this);
+                return true;
+            }
             return CurrentField.NextField.Move(this);
 
         }

@@ -25,6 +25,10 @@ namespace Goudkoorts
             {
                 return true;
             }
+            if (moveAble.MayNotMove)
+            {
+                return true;
+            }
 
             if (LowerField != null)
             {
@@ -32,19 +36,17 @@ namespace Goudkoorts
 
                 if (LowerField.Ship == null)
                 {
+                    moveAble.CurrentField.MoveAble = null;
                     MoveAble = moveAble;
+                    moveAble.CurrentField = this;
                     moveAble.MayNotMove = true;
-                    Game.Points += 8;
                     LowerField.Ship = moveAble;
-                }
-
-                if (moveAble.MayNotMove)
-                {
                     return true;
                 }
             }
-
+            moveAble.CurrentField.MoveAble = null;
             MoveAble = moveAble;
+            moveAble.CurrentField = this;
             return true;
         }
     }

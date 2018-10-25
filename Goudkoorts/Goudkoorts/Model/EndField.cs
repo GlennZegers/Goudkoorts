@@ -9,7 +9,9 @@ namespace Goudkoorts
     {
         public override bool Move(MoveAble moveAble)
         {
-            MoveAble = null;
+            moveAble.CurrentField.MoveAble = null;
+            moveAble.CurrentField = null;
+            moveAble = null;
             return true;
         }
     }

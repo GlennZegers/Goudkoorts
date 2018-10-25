@@ -7,10 +7,10 @@ namespace Goudkoorts
 {
     public class Warehouse : Field
     {
-
+        public Game Game { get; set; }
         public Cart SpawnCart()
         {
-            Cart tempCart = new Cart();
+            Cart tempCart = new Cart(Game);
             NextField.MoveAble = tempCart;
             tempCart.CurrentField = NextField;
             return tempCart;
@@ -20,7 +20,6 @@ namespace Goudkoorts
         {
             return "█";
         }
-
 
     }
 }
