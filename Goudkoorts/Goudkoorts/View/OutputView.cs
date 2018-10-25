@@ -57,7 +57,7 @@ namespace Goudkoorts
         public void ShowEndScreen()
         {
             Console.Clear();
-            Console.WriteLine("Aantal punten: *getal*");
+            Console.WriteLine("Aantal punten: " + Game.Points);
             Console.WriteLine("Druk op enter om het spel te beëindigen");
         }
 
