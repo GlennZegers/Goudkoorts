@@ -57,9 +57,9 @@ namespace Goudkoorts
                         EndGame();
                     }
                 }
-                Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 OutputView.StandardScreen();
-                Thread.Sleep(2000);
+               // Thread.Sleep(2000);
             }
 
         }

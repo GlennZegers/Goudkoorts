@@ -17,7 +17,7 @@ namespace Goudkoorts
         public void ChangeSwitch()
         {
             bool IsValid = false;
-            int MaxTime = DateTime.Now.Second + 5;
+            int MaxTime = DateTime.Now.Second + 1;
             while (DateTime.Now.Second <= MaxTime)
             {
                 IsValid = false;

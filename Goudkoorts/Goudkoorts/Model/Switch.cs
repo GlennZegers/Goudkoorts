@@ -25,6 +25,7 @@ namespace Goudkoorts
                 {
                     if(moveAble.CurrentField == UpperField)
                     {
+                        moveAble.CurrentField.MoveAble = null;
                         moveAble.CurrentField = this;
                         this.MoveAble = moveAble;
                         return true;
@@ -38,6 +39,7 @@ namespace Goudkoorts
                 {
                     if(moveAble.CurrentField == LowerField)
                     {
+                        moveAble.CurrentField.MoveAble = null;
                         moveAble.CurrentField = this;
                         this.MoveAble = moveAble;
                         return true;
@@ -50,6 +52,7 @@ namespace Goudkoorts
             }
             else
             {
+                moveAble.CurrentField.MoveAble = null;
                 moveAble.CurrentField = this;
                 this.MoveAble = moveAble;
                 return true;
