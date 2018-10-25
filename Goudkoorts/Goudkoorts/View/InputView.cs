@@ -14,10 +14,10 @@ namespace Goudkoorts
             Game = game;
         }
 
-        public void ChangeSwitch()
+        public void ChangeSwitch(int ExtraSeconds)
         {
             bool IsValid = false;
-            DateTime MaxTime = DateTime.Now.AddSeconds(2);
+            DateTime MaxTime = DateTime.Now.AddSeconds(ExtraSeconds);
             while (DateTime.Now <= MaxTime)
             {
                 IsValid = false;

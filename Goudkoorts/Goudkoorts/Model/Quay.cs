@@ -26,7 +26,7 @@ namespace Goudkoorts
             {
                 Ship.AmountOfGold += moveAble.AmountOfGold;
                 Game.Points++;
-                if (Ship.AmountOfGold >= 0)
+                if (Ship.AmountOfGold >= 8)
                 {
                     Ship.IsFull = true;
                     Ship.MayNotMove = false;

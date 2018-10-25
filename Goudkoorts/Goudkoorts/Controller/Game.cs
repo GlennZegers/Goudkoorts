@@ -21,10 +21,12 @@ namespace Goudkoorts
         public List<Switch> Switches { get; set; } 
         public int Points { get; set; }
         public WaterField ShipField { get; set; }
+        public int Max { get; set; }
 
         public Game()
         {
             Points = 0;
+            Max = 0;
             Switches = new List<Switch>();
             Warehouses = new List<Warehouse>();
             Carts = new List<Cart>();
@@ -51,16 +53,31 @@ namespace Goudkoorts
         {
            // for (int i =0; i < 2; i++)
             {
-                Carts.Add(Warehouses.ElementAt(2).SpawnCart());
+                //Carts.Add(Warehouses.ElementAt(2).SpawnCart());
                Carts.Add( Warehouses.ElementAt(0).SpawnCart());
             }
             OutputView.StandardScreen();
             while (true)
             {
-                InputView.ChangeSwitch();
+
+                Random r = new Random();
+
+                if (Points == 0)
+                {
+                    Max = 10;
+                }
+                else
+                {
+                    double MaxDouble = (10 / Points) * 1.5;
+                    Max = (Int32)MaxDouble;
+                }
+
+                double Seconds = Max / 2;
+                int ExtraSeconds = (Int32)Seconds;
+                InputView.ChangeSwitch(ExtraSeconds);
                 OutputView.StandardScreen();
                 
-                foreach (var c in Carts)
+                foreach (var c in Carts.ToList())
                 {
                     if (!c.Move())
                     {
@@ -69,6 +86,14 @@ namespace Goudkoorts
                
                 }
                 Ship.Move();
+
+                foreach (var w in Warehouses)
+                {
+                    if (r.Next(Max) == Max - 1)
+                    {
+                        Carts.Add(w.SpawnCart());
+                    }
+                }
                 //Thread.Sleep(2000);
                 OutputView.StandardScreen();
                // Thread.Sleep(2000);
