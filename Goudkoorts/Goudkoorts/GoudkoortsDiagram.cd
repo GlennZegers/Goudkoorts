@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Goudkoorts.Field">
-    <Position X="6.5" Y="4.5" Width="1.5" />
+    <Position X="9.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEEAA=</HashCode>
       <FileName>Model\Field.cs</FileName>
@@ -11,23 +11,31 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Switch">
-    <Position X="2" Y="6.25" Width="1.5" />
+    <Position X="2" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAIAAAAAIAAAAAAAAIAAAAAAAAAAAQAAAAAAAAEAAA=</HashCode>
+      <HashCode>BAAIAAAAAIAAAAAAAAIAAAAAAAAAAAQAAAAAAAAEBAA=</HashCode>
       <FileName>Model\Switch.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Cart">
-    <Position X="6.5" Y="2.75" Width="1.5" />
+    <Position X="3.75" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Game">
-    <Position X="3.5" Y="2.5" Width="1.5" />
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <AssociationLine Name="InputView" Type="Goudkoorts.InputView" ManuallyRouted="true">
+      <Path>
+        <Point X="4.75" Y="3.5" />
+        <Point X="4.75" Y="2.622" />
+        <Point X="3.25" Y="2.622" />
+        <Point X="3.25" Y="2.247" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAABAAABAAAAAAAIAKAAAAACAAAAAiAAEAEAQAAA=</HashCode>
+      <HashCode>QAAAAABAABBAgAAAAIIAKAAAIACIAAAAiAAEAEAQAAA=</HashCode>
       <FileName>Controller\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -37,44 +45,44 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Warehouse">
-    <Position X="3.5" Y="4.5" Width="1.5" />
+    <Position X="4.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAECAA=</HashCode>
       <FileName>Model\Warehouse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.ManeuveringField">
-    <Position X="4.25" Y="6.25" Width="1.5" />
+    <Position X="6.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\ManeuveringField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.WaterField">
-    <Position X="6.5" Y="6.25" Width="1.5" />
+    <Position X="8.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAgAAAQAAAAAAAAEAAA=</HashCode>
       <FileName>Model\WaterField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Ship">
-    <Position X="13.25" Y="2.75" Width="1.5" />
+    <Position X="11" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Ship.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.MoveAble">
-    <Position X="9" Y="1.25" Width="1.5" />
+    <Position X="6.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAEAAAAAAAAIAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAIAAAAAIAAAAAAAAAAAAEAAAAAAAAIAAAAAAQEAAA=</HashCode>
       <FileName>Model\MoveAble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Quay">
-    <Position X="11" Y="6.25" Width="1.5" />
+    <Position X="13.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAACAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAiAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Quay.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -82,24 +90,38 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.EndField">
-    <Position X="9" Y="6.25" Width="1.5" />
+    <Position X="11" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\EndField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.InputView">
-    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\InputView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.OutputView">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Position X="6.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AQAIEAAAAAAAgAAAAAAAAAAAAAgAAAAAAAAAAEAAAAA=</HashCode>
       <FileName>View\OutputView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Model.EndManeuveringField">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\EndManeuveringField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Model.EndWaterField">
+    <Position X="12.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Model\EndWaterField.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
