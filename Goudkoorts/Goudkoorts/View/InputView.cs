@@ -23,10 +23,6 @@ namespace Goudkoorts
                 IsValid = false;
                 while (!IsValid)
                 {
-                    //if (DateTime.Now.Second >= MaxTime)
-                    //{
-                    //    break;
-                    //}
                     var Input = Console.ReadKey(false).Key;
 
                     switch (Input)

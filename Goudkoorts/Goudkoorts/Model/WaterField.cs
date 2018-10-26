@@ -32,8 +32,6 @@ namespace Goudkoorts
 
             if (LowerField != null)
             {
-                //LowerField.Move(moveAble);
-
                 if (LowerField.Ship == null)
                 {
                     moveAble.CurrentField.MoveAble = null;

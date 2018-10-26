@@ -51,11 +51,8 @@ namespace Goudkoorts
 
         public void Play()
         {
-           // for (int i =0; i < 2; i++)
-            {
-                //Carts.Add(Warehouses.ElementAt(2).SpawnCart());
-               Carts.Add( Warehouses.ElementAt(0).SpawnCart());
-            }
+            Carts.Add( Warehouses.ElementAt(0).SpawnCart());
+
             OutputView.StandardScreen();
             while (true)
             {
@@ -94,9 +91,8 @@ namespace Goudkoorts
                         Carts.Add(w.SpawnCart());
                     }
                 }
-                //Thread.Sleep(2000);
+
                 OutputView.StandardScreen();
-               // Thread.Sleep(2000);
             }
 
         }
